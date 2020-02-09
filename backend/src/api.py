@@ -3,6 +3,8 @@ from flask import Flask, request, jsonify, abort
 from sqlalchemy import exc
 import json
 from flask_cors import CORS
+import logging
+from logging import FileHandler, Formatter
 
 from .database.models import db_drop_and_create_all, setup_db, Drink
 from .auth.auth import AuthError, requires_auth
@@ -16,15 +18,17 @@ CORS(app)
 !! NOTE THIS WILL DROP ALL RECORDS AND START YOUR DB FROM SCRATCH
 !! NOTE THIS MUST BE UNCOMMENTED ON FIRST RUN
 '''
-db_drop_and_create_all()
+# db_drop_and_create_all()
+
+# Set up logging
+error_log = FileHandler('error.log')
+error_log.setFormatter(Formatter(
+    '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+error_log.setLevel(logging.INFO)
+app.logger.setLevel(logging.INFO)
+app.logger.addHandler(error_log)
 
 # ROUTES
-
-
-@app.route('/')
-def index():
-    return jsonify({'message': 'test'}
-                   )
 
 
 '''
@@ -33,17 +37,21 @@ Auth: None
 Arguments: None
 Returns: List of drinks in short format
 Expected Success Code: 200
+drinks = [drink.short() for drink in all_drinks]
 '''
 
 
 @app.route('/drinks', methods=['GET'])
 def get_drinks():
-    drinks = [drink.short() for drink in Drink.query.all()]
+    drinks = Drink.query.order_by(Drink.id).all()
+
+    if len(drinks) == 0:
+        abort(404)
 
     return jsonify({
         'success': True,
-        'drinks': drinks
-    }, 200)
+        'drinks': [drink.short() for drink in drinks]
+    })
 
 
 '''
@@ -59,11 +67,12 @@ Expected Success Code: 200
 @requires_auth('get:drinks-detail')
 def get_drink_detail(jwt):
     drinks = [drink.long() for drink in Drink.query.all()]
+    print(type(drinks))
 
     return jsonify({
         'success': True,
         'drinks': drinks
-    }, 200)
+    })
 
 
 '''
@@ -80,13 +89,20 @@ Expected Success Code: 200
 def create_drink(jwt):
     data = request.get_json()
 
-    drink = Drink(title=data['title'], recipe=data['receipe'])
+    if 'title' and 'recipe' not in data:
+        abort(422)
+
+    title = data['title']
+    recipe = json.dumps(data['recipe'])
+
+    drink = Drink(title=title, recipe=recipe)
+
     drink.insert()
 
     return jsonify({
         'success': True,
-        'drinks': drink.long()
-    }, 200)
+        'drinks': [drink.long()]
+    })
 
 
 '''
@@ -120,7 +136,7 @@ def update_drink(jwt, drink_id):
     return jsonify({
         'success': True,
         'drinks': [drink.long()]
-    }, 200)
+    })
 
 
 '''
@@ -148,8 +164,7 @@ def delete_drink(jwt, drink_id):
     return jsonify({
         'success': True,
         'delete': drink.id
-    }, 200)
-
+    })
 
 
 # Error Handling
@@ -164,7 +179,7 @@ def unprocessable(error):
         "success": False,
         "error": 422,
         "message": "unprocessable"
-    }, 422)
+    }), 422
 
 
 '''
@@ -178,7 +193,7 @@ def not_found(error):
         "success": False,
         "error": 404,
         "message": "resource not found"
-    }, 404)
+    }), 404
 
 
 '''
@@ -192,7 +207,7 @@ def unauthorized(error):
         "success": False,
         "error": 401,
         "message": "unauthorized"
-    }, 401)
+    }), 401
 
 
 '''
@@ -206,7 +221,7 @@ def bad_request(error):
         "success": False,
         "error": 400,
         "message": "bad request"
-    }, 400)
+    }), 400
 
 
 '''
@@ -216,8 +231,7 @@ AuthError handler
 
 @app.errorhandler(AuthError)
 def process_AuthError(error):
-    return jsonify({
-        "success": False,
-        "error": error.status_code,
-        "message": error.error['message']
-    }), error.status_code
+    response = jsonify(error.error)
+    response.status_code = error.status_code
+
+    return response

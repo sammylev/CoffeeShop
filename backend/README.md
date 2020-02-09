@@ -83,21 +83,3 @@ There are `@TODO` comments throughout the `./backend/src`. We recommend tackling
 
 1. `./src/auth/auth.py`
 2. `./src/api.py`
-
-https://manage.auth0.com/tester/callback?connection=google-oauth2&code=md8sWFMzcm7uKKo2&state=g6Fo2SAtcUJ6MFdNX3ZLMzNYNnNSUzFHc2hjdjJ6c0tQaXh4NKN0aWTZIERkbHpNQU1lUGZfRFptS3hPU3dyUjgwTzFCX0p1b3Q0o2NpZNkgNjR2dUQydFNranhOTzlKT0VkSG9xdGJuNThzUjVlYXQ
-{
-  "sub": "auth0|5e23e301cc2cfd0e9cdd0215",
-  "nickname": "e.levandowski",
-  "name": "e.levandowski@gmail.com",
-  "picture": "https://s.gravatar.com/avatar/ac6ddf7cd7d27b7990b6d150da858954?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fe.png",
-  "updated_at": "2020-01-19T05:23:44.091Z"
-}
-
-https://manage.auth0.com/tester/callback?connection=google-oauth2&code=zFSlYdJFp-fGv3fY&state=g6Fo2SAtcUJ6MFdNX3ZLMzNYNnNSUzFHc2hjdjJ6c0tQaXh4NKN0aWTZIERkbHpNQU1lUGZfRFptS3hPU3dyUjgwTzFCX0p1b3Q0o2NpZNkgNjR2dUQydFNranhOTzlKT0VkSG9xdGJuNThzUjVlYXQ
-{
-  "sub": "auth0|5e1a0ba6f301a20cc7d46796",
-  "nickname": "sammy.murray",
-  "name": "sammy.murray@gmail.com",
-  "picture": "https://s.gravatar.com/avatar/c238475a3bebd732fce27702067078f0?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fsa.png",
-  "updated_at": "2020-01-19T05:25:02.301Z"
-}
