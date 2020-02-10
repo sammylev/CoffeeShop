@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e94a63ea-b778-4e68-8871-efa8c4def289",
+		"_postman_id": "46cc3fbe-03ce-43b0-8aa3-61f51d1f8b41",
 		"name": "udacity-fsnd-udaspicelatte",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -556,7 +556,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Water8\",\n    \"recipe\": {\n        \"name\": \"Water\",\n        \"color\": \"blue\",\n        \"parts\": 1\n    }\n}"
+							"raw": "{\n    \"title\": \"Water8\",\n    \"recipe\": [\n        {\n            \"name\": \"Water\",\n            \"color\": \"blue\",\n            \"parts\": 1\n        }\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{host}}/drinks",
@@ -704,132 +704,6 @@
 				}
 			],
 			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Get Barista User Token",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "grant_type",
-							"value": "password",
-							"type": "text"
-						},
-						{
-							"key": "username",
-							"value": "e.levandowski@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "Courage1",
-							"type": "text"
-						},
-						{
-							"key": "audience",
-							"value": "coffeeshop",
-							"type": "text"
-						},
-						{
-							"key": "client_id",
-							"value": "rDKQ03XlEr3kjgznJVHtaeELsVQh6DUX",
-							"type": "text"
-						},
-						{
-							"key": "client_secret",
-							"value": "-aa4BTo_Gw4c-FFLNnKAexC1708shtn1htMzWtZG5AiJscKPeckzqPTyDeNDrGQi",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://dev-sammylev.auth0.com/oauth/token",
-					"protocol": "https",
-					"host": [
-						"dev-sammylev",
-						"auth0",
-						"com"
-					],
-					"path": [
-						"oauth",
-						"token"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Manager User Token",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/x-www-form-urlencoded",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "grant_type",
-							"value": "password",
-							"type": "text"
-						},
-						{
-							"key": "username",
-							"value": "sammy.murray@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "Courage1",
-							"type": "text"
-						},
-						{
-							"key": "audience",
-							"value": "coffeeshop",
-							"type": "text"
-						},
-						{
-							"key": "client_id",
-							"value": "rDKQ03XlEr3kjgznJVHtaeELsVQh6DUX",
-							"type": "text"
-						},
-						{
-							"key": "client_secret",
-							"value": "-aa4BTo_Gw4c-FFLNnKAexC1708shtn1htMzWtZG5AiJscKPeckzqPTyDeNDrGQi",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://dev-sammylev.auth0.com/oauth/token",
-					"protocol": "https",
-					"host": [
-						"dev-sammylev",
-						"auth0",
-						"com"
-					],
-					"path": [
-						"oauth",
-						"token"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"event": [

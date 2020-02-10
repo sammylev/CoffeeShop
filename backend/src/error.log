@@ -7653,3 +7653,423 @@ sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed
 2020-02-09 13:07:48,591 INFO:  * Restarting with stat
 2020-02-09 13:16:07,976 INFO:  * Detected change in '/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/auth/auth.py', reloading
 2020-02-09 13:16:08,043 INFO:  * Restarting with stat
+2020-02-09 17:06:31,775 INFO: 127.0.0.1 - - [09/Feb/2020 17:06:31] "GET / HTTP/1.1" 404 -
+2020-02-09 17:06:37,292 ERROR: Exception on /drinks [GET] [in /anaconda3/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in get_drinks
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in <listcomp>
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in short
+    for r in json.loads(self.recipe)]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in <listcomp>
+    for r in json.loads(self.recipe)]
+TypeError: string indices must be integers
+2020-02-09 17:06:37,292 ERROR: Exception on /drinks [GET]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in get_drinks
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in <listcomp>
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in short
+    for r in json.loads(self.recipe)]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in <listcomp>
+    for r in json.loads(self.recipe)]
+TypeError: string indices must be integers
+2020-02-09 17:06:37,304 INFO: 127.0.0.1 - - [09/Feb/2020 17:06:37] "GET /drinks HTTP/1.1" 500 -
+2020-02-09 17:08:48,573 INFO: 127.0.0.1 - - [09/Feb/2020 17:08:48] "OPTIONS /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:08:48,778 INFO: 127.0.0.1 - - [09/Feb/2020 17:08:48] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:08:53,276 INFO: 127.0.0.1 - - [09/Feb/2020 17:08:53] "OPTIONS /drinks/6 HTTP/1.1" 200 -
+2020-02-09 17:08:53,449 INFO: 127.0.0.1 - - [09/Feb/2020 17:08:53] "DELETE /drinks/6 HTTP/1.1" 200 -
+2020-02-09 17:08:58,942 INFO: 127.0.0.1 - - [09/Feb/2020 17:08:58] "OPTIONS /drinks/3 HTTP/1.1" 200 -
+2020-02-09 17:08:59,117 INFO: 127.0.0.1 - - [09/Feb/2020 17:08:59] "PATCH /drinks/3 HTTP/1.1" 200 -
+2020-02-09 17:09:03,277 INFO: 127.0.0.1 - - [09/Feb/2020 17:09:03] "PATCH /drinks/3 HTTP/1.1" 200 -
+2020-02-09 17:10:33,431 INFO: 127.0.0.1 - - [09/Feb/2020 17:10:33] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:11:25,335 INFO: 127.0.0.1 - - [09/Feb/2020 17:11:25] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:12:43,372 INFO: 127.0.0.1 - - [09/Feb/2020 17:12:43] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:12:47,132 INFO: 127.0.0.1 - - [09/Feb/2020 17:12:47] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:15:11,588 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:11] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:15:11,635 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:11] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:15:11,671 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:11] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:15:11,707 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:11] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:15:11,738 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:11] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:15:11,783 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:11] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:15:12,039 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:12] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:15:12,253 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:12] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:15:12,464 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:12] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:15:12,671 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:12] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:15:12,713 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:12] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:15:12,935 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:12] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:15:13,160 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:13] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:15:13,370 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:13] "PATCH /drinks/1 HTTP/1.1" 404 -
+2020-02-09 17:15:13,589 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:13] "DELETE /drinks/1 HTTP/1.1" 404 -
+2020-02-09 17:15:53,616 INFO:  * Detected change in '/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py', reloading
+2020-02-09 17:15:53,686 INFO:  * Restarting with stat
+2020-02-09 17:15:59,747 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:59] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:15:59,817 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:59] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:15:59,849 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:59] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:15:59,881 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:59] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:15:59,916 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:59] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:15:59,949 INFO: 127.0.0.1 - - [09/Feb/2020 17:15:59] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:16:00,174 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:00] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:16:00,377 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:00] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:16:00,592 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:00] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:16:00,812 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:00] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:16:00,848 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:00] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:16:01,049 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:01] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:16:01,260 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:01] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:16:01,472 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:01] "PATCH /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:16:01,684 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:01] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:16:14,750 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:14] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:16:14,803 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:14] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:16:14,847 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:14] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:16:14,879 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:14] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:16:14,910 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:14] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:16:14,950 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:14] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:16:15,176 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:15] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:16:15,390 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:15] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:16:15,591 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:15] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:16:15,795 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:15] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:16:15,835 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:15] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:16:16,045 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:16] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:16:16,260 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:16] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:16:16,471 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:16] "PATCH /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:16:16,676 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:16] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:16:37,645 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:37] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:16:50,298 INFO: 127.0.0.1 - - [09/Feb/2020 17:16:50] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:17:01,103 INFO: 127.0.0.1 - - [09/Feb/2020 17:17:01] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:17:13,523 INFO: 127.0.0.1 - - [09/Feb/2020 17:17:13] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:17:17,622 ERROR: Exception on /drinks [GET] [in /anaconda3/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in get_drinks
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in <listcomp>
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in short
+    for r in json.loads(self.recipe)]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in <listcomp>
+    for r in json.loads(self.recipe)]
+TypeError: string indices must be integers
+2020-02-09 17:17:17,622 ERROR: Exception on /drinks [GET]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in get_drinks
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 53, in <listcomp>
+    'drinks': [drink.short() for drink in drinks]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in short
+    for r in json.loads(self.recipe)]
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 60, in <listcomp>
+    for r in json.loads(self.recipe)]
+TypeError: string indices must be integers
+2020-02-09 17:17:17,636 INFO: 127.0.0.1 - - [09/Feb/2020 17:17:17] "GET /drinks HTTP/1.1" 500 -
+2020-02-09 17:18:04,442 INFO: 127.0.0.1 - - [09/Feb/2020 17:18:04] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:18:40,182 INFO: 127.0.0.1 - - [09/Feb/2020 17:18:40] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:18:43,201 INFO: 127.0.0.1 - - [09/Feb/2020 17:18:43] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:18:48,081 INFO: 127.0.0.1 - - [09/Feb/2020 17:18:48] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:22:34,942 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:34] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:22:35,004 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:22:35,034 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:22:35,064 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:22:35,097 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:22:35,138 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:22:35,375 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:22:35,579 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:22:35,778 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:22:35,991 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:35] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:22:36,029 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:36] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:22:36,244 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:36] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:22:36,450 ERROR: Exception on /drinks [POST] [in /anaconda3/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: drink.title
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/auth/auth.py", line 157, in wrapper
+    return f(payload, *args, **kwargs)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 100, in create_drink
+    drink.insert()
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 92, in insert
+    db.session.commit()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2451, in flush
+    self._flush(objects)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2549, in _flush
+    flush_context.execute()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1120, in _emit_insert_statements
+    statement, params
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: drink.title
+[SQL: INSERT INTO drink (title, recipe) VALUES (?, ?)]
+[parameters: ('Water8', '[{"name": "Water", "color": "blue", "parts": 1}]')]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-02-09 17:22:36,450 ERROR: Exception on /drinks [POST]
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: drink.title
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/anaconda3/lib/python3.7/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/anaconda3/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/anaconda3/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/auth/auth.py", line 157, in wrapper
+    return f(payload, *args, **kwargs)
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py", line 100, in create_drink
+    drink.insert()
+  File "/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/database/models.py", line 92, in insert
+    db.session.commit()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1026, in commit
+    self.transaction.commit()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 493, in commit
+    self._prepare_impl()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 472, in _prepare_impl
+    self.session.flush()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2451, in flush
+    self._flush(objects)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2589, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 129, in reraise
+    raise value
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2549, in _flush
+    flush_context.execute()
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/unitofwork.py", line 589, in execute
+    uow,
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 245, in save_obj
+    insert,
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/orm/persistence.py", line 1120, in _emit_insert_statements
+    statement, params
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 383, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 128, in reraise
+    raise value.with_traceback(tb)
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/anaconda3/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: drink.title
+[SQL: INSERT INTO drink (title, recipe) VALUES (?, ?)]
+[parameters: ('Water8', '[{"name": "Water", "color": "blue", "parts": 1}]')]
+(Background on this error at: http://sqlalche.me/e/gkpj)
+2020-02-09 17:22:36,466 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:36] "POST /drinks HTTP/1.1" 500 -
+2020-02-09 17:22:36,694 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:36] "PATCH /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:22:36,911 INFO: 127.0.0.1 - - [09/Feb/2020 17:22:36] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:23:32,206 INFO: 127.0.0.1 - - [09/Feb/2020 17:23:32] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:23:41,057 INFO: 127.0.0.1 - - [09/Feb/2020 17:23:41] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:23:48,783 INFO: 127.0.0.1 - - [09/Feb/2020 17:23:48] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:24:15,623 INFO: 127.0.0.1 - - [09/Feb/2020 17:24:15] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:24:19,780 INFO: 127.0.0.1 - - [09/Feb/2020 17:24:19] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:24:38,503 INFO: 127.0.0.1 - - [09/Feb/2020 17:24:38] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:24:51,048 INFO: 127.0.0.1 - - [09/Feb/2020 17:24:51] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:25:12,926 INFO: 127.0.0.1 - - [09/Feb/2020 17:25:12] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:25:16,983 INFO: 127.0.0.1 - - [09/Feb/2020 17:25:16] "GET /drinks HTTP/1.1" 404 -
+2020-02-09 17:25:44,781 INFO:  * Detected change in '/Users/sammymurray/DevWork/FullStackUdacity/CoffeeShop/backend/src/api.py', reloading
+2020-02-09 17:25:44,858 INFO:  * Restarting with stat
+2020-02-09 17:25:48,542 INFO: 127.0.0.1 - - [09/Feb/2020 17:25:48] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:25:51,704 INFO: 127.0.0.1 - - [09/Feb/2020 17:25:51] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:25:54,824 INFO: 127.0.0.1 - - [09/Feb/2020 17:25:54] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:00,209 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:00] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:04,246 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:04] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:09,328 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:09] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:26:16,044 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:16] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:35,299 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:35,352 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:26:35,386 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:26:35,421 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:35,450 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:35,488 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:35,697 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:35,912 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:35] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:26:36,125 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:36] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:36,323 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:36] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:36,361 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:36] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:36,575 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:36] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:36,795 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:36] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:37,015 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:37] "PATCH /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:26:37,225 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:37] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:26:44,677 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:44] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:44,717 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:44] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:26:44,750 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:44] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:26:44,795 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:44] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:44,840 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:44] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:44,874 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:44] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:45,084 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:45] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:45,288 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:45] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:26:45,503 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:45] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:45,705 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:45] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:45,742 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:45] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:45,940 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:45] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:46,160 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:46] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:46,380 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:46] "PATCH /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:26:46,591 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:46] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:26:54,059 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:54,093 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:26:54,126 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:26:54,159 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:54,190 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:54,229 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:54,437 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:54,663 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:26:54,871 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:54] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:55,074 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:55] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:26:55,112 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:55] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:55,341 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:55] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:26:55,556 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:55] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:26:55,769 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:55] "PATCH /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:26:55,976 INFO: 127.0.0.1 - - [09/Feb/2020 17:26:55] "DELETE /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:39:02,870 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:02] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:39:02,922 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:02] "GET /drinks-detail HTTP/1.1" 401 -
+2020-02-09 17:39:02,955 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:02] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:39:02,989 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:02] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:39:03,018 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:03] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:39:03,052 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:03] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:39:03,285 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:03] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:39:03,491 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:03] "POST /drinks HTTP/1.1" 401 -
+2020-02-09 17:39:03,714 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:03] "PATCH /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:39:03,917 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:03] "DELETE /drinks/1 HTTP/1.1" 401 -
+2020-02-09 17:39:03,953 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:03] "GET /drinks HTTP/1.1" 200 -
+2020-02-09 17:39:04,154 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:04] "GET /drinks-detail HTTP/1.1" 200 -
+2020-02-09 17:39:04,360 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:04] "POST /drinks HTTP/1.1" 200 -
+2020-02-09 17:39:04,567 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:04] "PATCH /drinks/1 HTTP/1.1" 200 -
+2020-02-09 17:39:04,774 INFO: 127.0.0.1 - - [09/Feb/2020 17:39:04] "DELETE /drinks/1 HTTP/1.1" 200 -

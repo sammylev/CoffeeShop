@@ -18,7 +18,7 @@ CORS(app)
 !! NOTE THIS WILL DROP ALL RECORDS AND START YOUR DB FROM SCRATCH
 !! NOTE THIS MUST BE UNCOMMENTED ON FIRST RUN
 '''
-# db_drop_and_create_all()
+db_drop_and_create_all()
 
 # Set up logging
 error_log = FileHandler('error.log')
@@ -44,9 +44,6 @@ drinks = [drink.short() for drink in all_drinks]
 @app.route('/drinks', methods=['GET'])
 def get_drinks():
     drinks = Drink.query.order_by(Drink.id).all()
-
-    if len(drinks) == 0:
-        abort(404)
 
     return jsonify({
         'success': True,
